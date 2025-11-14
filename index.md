@@ -4,7 +4,7 @@ layout: homepage
 
 ## SeriScope: A low cost edge-AI system for fertility and disease assessment of Tassar silkworm eggs
 
-**Pebrine is caused by ** ***Nosema bombycis*** and is the most destructive disease in silkworms. It
+**Pebrine is caused by** ***Nosema bombycis*** and is the most destructive disease in silkworms. It
 historically devastated European sericulture in the 18th century. Even today, if infection is found,
 entire batches of eggs are destroyed. This leads to serious financial losses for farmers. Current
 detection methods depend on looking at moth body fluid under a microscope. This manual
