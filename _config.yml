@@ -12,7 +12,7 @@ canonical: https://seriscope.tdivyajyotis.in/
 
 # Images (e.g., your profile picture and your website's favicon) 
 # "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
-avatar: ./assets/logo.jpg
+avatar: ./assets/logo1.jpg
 favicon: ./assets/favicon-32x32.png
 favicon_dark: ./assets/favicon-32x32.png
 
