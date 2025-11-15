@@ -23,4 +23,6 @@ It can run offline on microcomputers like Raspberry Pi. By automating diagnostic
 greatly cuts down on the need for manpower, lowers testing costs, and shortens analysis time. At
 the same time, it improves reliability and supports sustainable silk production.
 
+![Image](assets/station.jpg)
+
 {% include_relative _includes/publications.md %}
