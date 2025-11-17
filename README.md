@@ -1,4 +1,4 @@
-#Website for SeriScope
+# Website for SeriScope
 
 Served by github-pages and built with Jekyll & [minimal-light](https://github.com/yaoyao-liu/minimal-light)
 
