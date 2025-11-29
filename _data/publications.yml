@@ -5,4 +5,5 @@ main:
     pdf: ./assets/iris.pdf
 
   - title: Submission for Big Bang Rotary Innovation Challenge
+    authors: Suryakanta Lenka & Tripathy Divyajyoti Senapati
     pdf: ./assets/bbric.pdf
