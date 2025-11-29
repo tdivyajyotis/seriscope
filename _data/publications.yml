@@ -1,5 +1,8 @@
 main:
 
-  - title: SeriScope submission for IRIS
+  - title: Submission for IRIS
     authors: Suryakanta Lenka & Tripathy Divyajyoti Senapati
     pdf: ./assets/iris.pdf
+
+  - title: Submission for Big Bang Rotary Innovation Challenge
+    pdf: ./assets/bbric.pdf
