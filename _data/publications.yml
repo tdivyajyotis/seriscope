@@ -1,9 +1,5 @@
 main:
 
-  - title: Submission for IRIS
+  - title: Preliminary Submission for IRIS
     authors: Suryakanta Lenka & Tripathy Divyajyoti Senapati
     pdf: ./assets/iris.pdf
-
-  - title: Submission for Big Bang Rotary Innovation Challenge
-    authors: Suryakanta Lenka & Tripathy Divyajyoti Senapati
-    pdf: ./assets/bbric.pdf
