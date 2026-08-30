@@ -7,8 +7,8 @@ import {
   useScroll,
   useTransform,
 } from 'motion/react';
-import Link from 'next/link';
 import { Fragment, useRef } from 'react';
+import { RouteLink } from './route-link';
 
 const statement =
   'Microscopy becomes evidence. Evidence becomes a decision that can stay close to the field.';
@@ -80,9 +80,9 @@ export function ScrollStatement() {
               </Fragment>
             ))}
           </h2>
-          <Link className="text-link" href="/technology">
+          <RouteLink className="text-link" href="/technology">
             Trace the diagnostic chain <span aria-hidden="true">↗</span>
-          </Link>
+          </RouteLink>
         </div>
       </div>
     </section>

@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import Link from 'next/link';
 import {
   ArrowDown,
   ArrowUpRight,
@@ -22,6 +21,7 @@ import { Achievements } from './achievements';
 import { ColorFields } from './color-fields';
 import { FeaturedTicker } from './featured-ticker';
 import { ScrollStatement } from './scroll-statement';
+import { RouteLink } from './route-link';
 import { SiteFooter } from './site-footer';
 import { SiteHeader } from './site-header';
 import { researchPaper } from '@/lib/content';
@@ -157,13 +157,13 @@ export function HomeExperience() {
               conditions.
             </p>
             <div className="hero-actions">
-              <Link className="button button-primary" href="/technology">
+              <RouteLink className="button button-primary" href="/technology">
                 Explore the technology{' '}
                 <ArrowUpRight size={17} aria-hidden="true" />
-              </Link>
-              <Link className="button button-quiet" href="/research">
+              </RouteLink>
+              <RouteLink className="button button-quiet" href="/research">
                 View the research
-              </Link>
+              </RouteLink>
             </div>
           </motion.div>
         </motion.div>
@@ -225,9 +225,9 @@ export function HomeExperience() {
             Visual explanations connect model output to the microscopic regions
             that matter, helping keep a trained operator in the loop.
           </p>
-          <Link className="text-link" href="/research">
+          <RouteLink className="text-link" href="/research">
             Explore the research <ArrowUpRight size={16} aria-hidden="true" />
-          </Link>
+          </RouteLink>
         </div>
         <div className="evidence-visual">
           <Image

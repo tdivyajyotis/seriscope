@@ -8,9 +8,9 @@ import {
   useScroll,
 } from 'motion/react';
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { routes } from '@/lib/content';
+import { RouteLink } from './route-link';
 
 export function SiteHeader({ dark = false }: { dark?: boolean }) {
   const [open, setOpen] = useState(false);
@@ -37,25 +37,25 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
       animate={{ y: hidden ? '-100%' : 0 }}
       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
     >
-      <Link href="/" className="wordmark" aria-label="SeriScope home">
+      <RouteLink href="/" className="wordmark" aria-label="SeriScope home">
         <span aria-hidden="true">SRSCP</span>
         <span className="sr-only">SeriScope</span>
         <span className="wordmark-dot" aria-hidden="true" />
-      </Link>
+      </RouteLink>
       <nav className="desktop-nav" aria-label="Primary navigation">
         {routes.map((route) => (
-          <Link
+          <RouteLink
             key={route.href}
             href={route.href}
             aria-current={pathname === route.href ? 'page' : undefined}
           >
             {route.label}
-          </Link>
+          </RouteLink>
         ))}
       </nav>
-      <Link className="contact-link" href="/contact">
+      <RouteLink className="contact-link" href="/contact">
         Contact
-      </Link>
+      </RouteLink>
       <button
         className="menu-button"
         type="button"
@@ -78,13 +78,13 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
           >
             {[...routes, { href: '/contact', label: 'Contact' }].map(
               (route) => (
-                <Link
+                <RouteLink
                   key={route.href}
                   href={route.href}
                   onClick={() => setOpen(false)}
                 >
                   {route.label}
-                </Link>
+                </RouteLink>
               ),
             )}
           </motion.nav>
