@@ -11,7 +11,7 @@ export function SiteFooter() {
             className="footer-mark"
             aria-label="SeriScope home"
           >
-            SRSCP<span>.</span>
+            SrscpPrj
           </RouteLink>
           <p>Optical intelligence for practical sericulture.</p>
         </div>

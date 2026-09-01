@@ -2,14 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Cpu,
-  Eye,
-  Microscope,
-  ScanLine,
-} from 'lucide-react';
+import { ArrowUpRight, Cpu, Eye, Microscope, ScanLine } from 'lucide-react';
 import {
   motion,
   useReducedMotion,
@@ -107,7 +100,6 @@ export function HomeExperience() {
           />
         </motion.div>
         <div className="hero-shade" />
-        <div className="hero-grid" aria-hidden="true" />
         <motion.div className="hero-scene-motion" style={{ y: heroMediaY }}>
           <HeroScene />
         </motion.div>
@@ -127,74 +119,48 @@ export function HomeExperience() {
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            <div className="hero-kicker">
-              <span>
-                <Microscope size={15} aria-hidden="true" /> Optical intelligence
-              </span>
-              <span>Field edge / 01</span>
+            <div className="hero-title-block">
+              <h1 aria-label="SeriScope">
+                {'SeriScope'.split('').map((character, index) => (
+                  <motion.span
+                    aria-hidden="true"
+                    key={`${character}-${index}`}
+                    initial={reduceMotion ? false : { opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.75,
+                      delay: 0.16 + index * 0.035,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  >
+                    {character}
+                  </motion.span>
+                ))}
+              </h1>
             </div>
-            <h1 aria-label="SeriScope">
-              {'Seri'.split('').map((character, index) => (
-                <motion.span
-                  aria-hidden="true"
-                  key={`${character}-${index}`}
-                  initial={reduceMotion ? false : { opacity: 0, y: 36 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.7,
-                    delay: 0.18 + index * 0.045,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                >
-                  {character}
-                </motion.span>
-              ))}
-              <em aria-hidden="true">Scope</em>
-            </h1>
-            <p className="hero-statement">
-              Field intelligence, <em>through the lens.</em>
-            </p>
-            <p className="hero-copy">
-              SeriScope turns microscopic Tasar samples into explainable,
-              offline decisions for Pebrine screening and fertility assessment.
-            </p>
-            <div className="hero-actions">
-              <RouteLink className="button button-primary" href="/technology">
-                Explore the technology{' '}
-                <ArrowUpRight size={17} aria-hidden="true" />
-              </RouteLink>
-              <RouteLink className="button button-quiet" href="/research">
-                View the research
-              </RouteLink>
-            </div>
+
+            <aside className="hero-aside" aria-label="Explore SeriScope">
+              <p>
+                Explainable, offline microscopy for Pebrine screening and Tasar
+                egg fertility assessment.
+              </p>
+              <nav className="hero-links" aria-label="Featured sections">
+                <RouteLink href="/technology">
+                  <span>Technology</span>
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </RouteLink>
+                <RouteLink href="/research">
+                  <span>Research</span>
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </RouteLink>
+                <RouteLink href="/impact">
+                  <span>Impact</span>
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </RouteLink>
+              </nav>
+            </aside>
           </motion.div>
         </motion.div>
-        <div className="hero-optical-legend" aria-hidden="true">
-          <span>Sample plane</span>
-          <span>Edge inference</span>
-          <span>Operator evidence</span>
-        </div>
-        <div className="hero-readout" aria-label="Project highlights">
-          <div>
-            <strong>1,400+</strong>
-            <span>Real samples</span>
-          </div>
-          <div>
-            <strong>Offline</strong>
-            <span>Edge inference</span>
-          </div>
-          <div>
-            <strong>ISEF</strong>
-            <span>Special award</span>
-          </div>
-        </div>
-        <a
-          className="scroll-cue"
-          href="#overview"
-          aria-label="Continue to overview"
-        >
-          <ArrowDown size={16} aria-hidden="true" />
-        </a>
       </section>
 
       <ScrollStatement />

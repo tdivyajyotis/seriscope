@@ -38,9 +38,8 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
     >
       <RouteLink href="/" className="wordmark" aria-label="SeriScope home">
-        <span aria-hidden="true">SRSCP</span>
+        <span aria-hidden="true">SrscpPrj</span>
         <span className="sr-only">SeriScope</span>
-        <span className="wordmark-dot" aria-hidden="true" />
       </RouteLink>
       <nav className="desktop-nav" aria-label="Primary navigation">
         {routes.map((route) => (
