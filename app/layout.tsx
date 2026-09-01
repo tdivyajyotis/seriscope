@@ -1,10 +1,15 @@
 import type { Metadata } from 'next';
-import { Instrument_Serif, JetBrains_Mono, Manrope } from 'next/font/google';
+import { Almarai, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+import './identity.css';
 
-const manrope = Manrope({ variable: '--font-body', subsets: ['latin'] });
+const almarai = Almarai({
+  variable: '--font-body',
+  subsets: ['latin'],
+  weight: ['300', '400', '700', '800'],
+});
 const instrumentSerif = Instrument_Serif({
-  variable: '--font-display',
+  variable: '--font-accent',
   subsets: ['latin'],
   weight: '400',
 });
@@ -44,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.variable} ${instrumentSerif.variable} ${jetBrainsMono.variable}`}
+        className={`${almarai.variable} ${instrumentSerif.variable} ${jetBrainsMono.variable}`}
       >
         {children}
       </body>

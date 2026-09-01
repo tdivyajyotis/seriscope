@@ -128,11 +128,13 @@ export function HomeExperience() {
             }}
           >
             <div className="hero-kicker">
-              <Microscope size={16} aria-hidden="true" />
-              <span>Edge AI for sericulture</span>
+              <span>
+                <Microscope size={15} aria-hidden="true" /> Optical intelligence
+              </span>
+              <span>Field edge / 01</span>
             </div>
             <h1 aria-label="SeriScope">
-              {'SeriScope'.split('').map((character, index) => (
+              {'Seri'.split('').map((character, index) => (
                 <motion.span
                   aria-hidden="true"
                   key={`${character}-${index}`}
@@ -147,14 +149,14 @@ export function HomeExperience() {
                   {character}
                 </motion.span>
               ))}
+              <em aria-hidden="true">Scope</em>
             </h1>
             <p className="hero-statement">
-              Smarter sericulture, powered at the edge.
+              Field intelligence, <em>through the lens.</em>
             </p>
             <p className="hero-copy">
-              An AI diagnostic platform for screening Pebrine disease and
-              assessing fertility in Tasar silkworm eggs, built for real field
-              conditions.
+              SeriScope turns microscopic Tasar samples into explainable,
+              offline decisions for Pebrine screening and fertility assessment.
             </p>
             <div className="hero-actions">
               <RouteLink className="button button-primary" href="/technology">
@@ -167,9 +169,10 @@ export function HomeExperience() {
             </div>
           </motion.div>
         </motion.div>
-        <div className="hero-index" aria-hidden="true">
-          <span>Optical field</span>
-          <strong>03</strong>
+        <div className="hero-optical-legend" aria-hidden="true">
+          <span>Sample plane</span>
+          <span>Edge inference</span>
+          <span>Operator evidence</span>
         </div>
         <div className="hero-readout" aria-label="Project highlights">
           <div>
