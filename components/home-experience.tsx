@@ -100,6 +100,15 @@ export function HomeExperience() {
           />
         </motion.div>
         <div className="hero-shade" />
+        <div className="hero-microscope-visual" aria-hidden="true">
+          <Image
+            src="/images/hero/microscope-outline.png"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 900px) 100vw, 74vw"
+          />
+        </div>
         <motion.div className="hero-scene-motion" style={{ y: heroMediaY }}>
           <HeroScene />
         </motion.div>
