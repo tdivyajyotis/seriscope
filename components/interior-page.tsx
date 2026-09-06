@@ -16,11 +16,11 @@ type Content = {
   sections: readonly (readonly [string, string, string])[];
 };
 
-const routeMeta: Record<string, { index: string; signal: string }> = {
-  Technology: { index: '02', signal: 'Capture / Process / Infer' },
-  Research: { index: '03', signal: 'Dataset / Model / Explain' },
-  Impact: { index: '04', signal: 'Field / Operator / Outcome' },
-  Story: { index: '05', signal: 'Lab / Team / Global stage' },
+const routeIndexes: Record<string, string> = {
+  Technology: '02',
+  Research: '03',
+  Impact: '04',
+  Story: '05',
 };
 
 export function InteriorPage({
@@ -33,10 +33,7 @@ export function InteriorPage({
   nextLabel: string;
 }) {
   const reduceMotion = useReducedMotion();
-  const meta = routeMeta[content.eyebrow] ?? {
-    index: '00',
-    signal: 'SeriScope',
-  };
+  const routeIndex = routeIndexes[content.eyebrow] ?? '00';
   const reveal = reduceMotion
     ? {}
     : {
@@ -50,9 +47,9 @@ export function InteriorPage({
     <main className={`interior-page route-${content.eyebrow.toLowerCase()}`}>
       <SiteHeader dark />
       <section className="interior-hero">
-        <div className="route-coordinate" aria-hidden="true">
-          <span>{meta.index} / 06</span>
-          <span>{meta.signal}</span>
+        <div className="route-index section-index" aria-hidden="true">
+          <span className="section-index-number">{routeIndex}</span>
+          <span className="section-index-label">{content.eyebrow}</span>
         </div>
         <motion.div
           className="interior-hero-copy"
@@ -60,35 +57,29 @@ export function InteriorPage({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.82, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="eyebrow">SRSCP / {content.eyebrow}</p>
           <h1>{content.title}</h1>
           <p className="lede">{content.intro}</p>
         </motion.div>
         <motion.figure
-          className="interior-image-wrap"
+          className="interior-image-composition"
           initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.92, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Image
-            src={content.image}
-            alt={content.imageAlt}
-            width={1600}
-            height={1100}
-            sizes="(max-width: 900px) 100vw, 58vw"
-            priority
-          />
-          <div className="route-optic" aria-hidden="true">
-            <i />
-            <i />
-            <i />
+          <div className="interior-image-backdrop" aria-hidden="true" />
+          <div className="interior-image-wrap">
+            <Image
+              src={content.image}
+              alt={content.imageAlt}
+              width={1600}
+              height={1100}
+              sizes="(max-width: 900px) 100vw, 58vw"
+              priority
+            />
           </div>
-          <div className="image-signal-line" aria-hidden="true" />
-          <figcaption className="image-index">
-            <span>Optical record</span>
-            <span>
-              {content.eyebrow} / {meta.index}
-            </span>
+          <figcaption className="image-index section-index">
+            <span className="section-index-number">{routeIndex}</span>
+            <span className="section-index-label">Visual record</span>
           </figcaption>
         </motion.figure>
       </section>

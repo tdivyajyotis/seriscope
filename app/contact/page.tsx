@@ -24,16 +24,15 @@ export default function ContactPage() {
           <i />
           <i />
         </div>
-        <div className="route-coordinate" aria-hidden="true">
-          <span>06 / 06</span>
-          <span>Signal / Connect</span>
+        <div className="route-index section-index" aria-hidden="true">
+          <span className="section-index-number">06</span>
+          <span className="section-index-label">Contact</span>
         </div>
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.82, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="eyebrow">SRSCP / Contact</p>
           <h1>
             Take the next <em>field step</em> with us.
           </h1>

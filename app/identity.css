@@ -156,20 +156,24 @@ body {
     linear-gradient(90deg, rgba(5, 7, 6, 0.22), rgba(5, 7, 6, 0.04));
 }
 
-.hero-microscope-visual {
+.hero-microscope-sketch {
   position: absolute;
   z-index: -1;
-  inset: 76px -7% 2% 32%;
+  top: 94px;
+  bottom: 22%;
+  left: -4%;
+  width: min(43vw, 680px);
   overflow: hidden;
   pointer-events: none;
+  transform-origin: left center;
+  will-change: transform, opacity;
 }
 
-.hero-microscope-visual img {
+.hero-microscope-sketch img {
   object-fit: contain;
-  object-position: 76% center;
-  filter: grayscale(1) contrast(0.9) brightness(0.7);
-  mix-blend-mode: screen;
-  opacity: 0.16;
+  object-position: left center;
+  filter: saturate(0.82) contrast(1.08) brightness(0.9);
+  opacity: 0.48;
 }
 
 .hero-content {
@@ -184,10 +188,8 @@ body {
 }
 
 .hero-content-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(250px, 25vw);
-  align-items: end;
-  gap: clamp(34px, 5vw, 96px);
+  position: relative;
+  display: block;
 }
 
 .hero-content h1 {
@@ -195,45 +197,48 @@ body {
   color: var(--bone);
   font-family: var(--font-body), Arial, sans-serif;
   font-weight: 300;
-  font-size: clamp(104px, 14vw, 252px);
+  font-size: clamp(104px, 12.7vw, 232px);
   line-height: 0.74;
   white-space: nowrap;
 }
 
 .hero-aside {
-  max-width: 390px;
-  padding-bottom: 0.2em;
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + clamp(34px, 5vh, 58px));
+  z-index: 2;
+  width: fit-content;
+  max-width: min(460px, 34vw);
+  padding: 18px 24px 20px;
+  color: var(--void);
+  background: var(--signal);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 44px 44px 44px 12px;
+  box-shadow:
+    0 18px 54px rgba(0, 0, 0, 0.26),
+    0 0 38px rgba(184, 255, 99, 0.16);
+  will-change: transform, opacity;
 }
 
 .hero-aside > p {
-  max-width: 360px;
-  margin: 0 0 28px;
-  color: rgba(222, 219, 200, 0.64);
-  font-size: clamp(14px, 1.2vw, 18px);
-  line-height: 1.55;
+  max-width: 405px;
+  margin: 0;
+  color: var(--void);
+  font-family: var(--font-hero), Arial, sans-serif;
+  font-size: clamp(17px, 1.3vw, 22px);
+  font-weight: 500;
+  line-height: 1.34;
+  text-wrap: balance;
 }
 
-.hero-links {
-  border-top: 1px solid var(--hairline);
+.hero-aside > p > span {
+  display: inline-block;
+  margin-right: 0.24em;
 }
 
-.hero-links a {
-  min-height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: var(--bone);
-  border-bottom: 1px solid var(--hairline);
-  font-size: 13px;
-  transition:
-    color 0.25s ease,
-    padding 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.hero-links a:hover,
-.hero-links a:focus-visible {
-  padding-left: 10px;
-  color: var(--signal);
+.hero-aside .hero-phrase-emphasis {
+  color: var(--void);
+  font-weight: 700;
 }
 
 .button {
@@ -286,24 +291,37 @@ body {
 }
 
 .statement-stage {
-  grid-template-columns: 80px 1fr;
+  grid-template-columns: 1fr;
   padding: 110px clamp(22px, 7vw, 130px);
 }
 
-.statement-meta > span {
-  color: rgba(222, 219, 200, 0.38);
+.statement-meta {
+  position: absolute;
+  top: clamp(92px, 11vh, 122px);
+  right: clamp(22px, 7vw, 130px);
+  left: clamp(22px, 7vw, 130px);
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0;
 }
 
 .statement-progress {
+  width: min(180px, 15vw);
+  height: 1px;
+  margin: 16px 0 0;
   background: rgba(222, 219, 200, 0.12);
 }
 
 .statement-progress i {
   background: var(--signal);
+  transform-origin: left;
 }
 
 .statement-stage > div:last-child {
   max-width: 1050px;
+  margin-left: clamp(78px, 9vw, 150px);
 }
 
 .statement-stage h2 {
@@ -316,6 +334,28 @@ body {
 
 .statement-stage .text-link {
   color: var(--signal);
+}
+
+.section-index {
+  width: clamp(118px, 10vw, 148px);
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: baseline;
+  padding-top: 10px;
+  border-top: 1px solid currentColor;
+}
+
+.section-index-number {
+  opacity: 0.5;
+  font: 500 10px/1 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.section-index-label {
+  font-family: var(--font-hero), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .workflow-section {
@@ -368,9 +408,16 @@ body {
 }
 
 .color-field h2 {
+  grid-column: 2;
   font-family: var(--font-body), Arial, sans-serif;
   font-weight: 300;
   line-height: 0.9;
+}
+
+.color-field > .section-index {
+  position: absolute;
+  top: 90px;
+  left: clamp(22px, 7vw, 130px);
 }
 
 .field-sample {
@@ -591,16 +638,12 @@ body {
   border-bottom: 1px solid var(--hairline);
 }
 
-.route-coordinate {
+.route-index {
   position: absolute;
   top: 28px;
   left: clamp(22px, 5.5vw, 104px);
-  right: clamp(22px, 5.5vw, 104px);
-  display: flex;
-  justify-content: space-between;
-  color: rgba(222, 219, 200, 0.38);
-  font: 500 8px/1 var(--font-mono);
-  text-transform: uppercase;
+  z-index: 3;
+  color: rgba(222, 219, 200, 0.72);
 }
 
 .interior-hero-copy {
@@ -611,7 +654,7 @@ body {
 .interior-hero-copy h1,
 .contact-hero h1 {
   max-width: 760px;
-  margin: 26px 0 30px;
+  margin: 0 0 30px;
   color: var(--bone);
   font-family: var(--font-body), Arial, sans-serif;
   font-size: clamp(58px, 6.7vw, 106px);
@@ -626,42 +669,90 @@ body {
   line-height: 1.75;
 }
 
-.interior-image-wrap {
+.interior-image-composition {
+  --image-treatment: saturate(0.86) contrast(1.04) brightness(1);
+  --image-glow: rgba(184, 255, 99, 0.14);
   position: relative;
   height: min(68vh, 730px);
   margin: 0;
+  isolation: isolate;
+}
+
+.interior-image-backdrop {
+  position: absolute;
+  z-index: 0;
+  inset: 6% -2% -3% 7%;
+  background: var(--panel-raised);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  box-shadow:
+    0 34px 80px rgba(0, 0, 0, 0.3),
+    0 0 48px var(--image-glow);
+}
+
+.route-technology .interior-image-composition {
+  --image-treatment: saturate(0.92) contrast(1.03) brightness(1.04);
+  --image-glow: rgba(184, 255, 99, 0.15);
+}
+
+.route-research .interior-image-composition {
+  --image-treatment: saturate(0.88) contrast(1.04) brightness(0.98);
+  --image-glow: rgba(205, 200, 245, 0.17);
+}
+
+.route-impact .interior-image-composition {
+  --image-treatment: saturate(0.82) contrast(1.04) brightness(1);
+  --image-glow: rgba(184, 255, 99, 0.13);
+}
+
+.route-story .interior-image-composition {
+  --image-treatment: saturate(0.9) contrast(1.02) brightness(1.08);
+  --image-glow: rgba(255, 119, 109, 0.16);
+}
+
+.route-technology .interior-image-backdrop {
+  background: #203026;
+}
+
+.route-research .interior-image-backdrop {
+  background: #30342f;
+}
+
+.route-impact .interior-image-backdrop {
+  background: #26352e;
+}
+
+.route-story .interior-image-backdrop {
+  background: #38382f;
+}
+
+.interior-image-wrap {
+  position: absolute;
+  z-index: 1;
+  inset: 0 4% 9% 0;
+  height: auto;
+  margin: 0;
+  overflow: hidden;
   background: var(--panel-raised);
   border: 1px solid var(--hairline);
   border-radius: 6px;
-}
-
-.interior-image-wrap::before,
-.interior-image-wrap::after {
-  position: absolute;
-  z-index: 2;
-  width: 44px;
-  height: 44px;
-  border-color: var(--signal);
-  content: '';
-  pointer-events: none;
-}
-
-.interior-image-wrap::before {
-  top: 14px;
-  left: 14px;
-  border-top: 1px solid;
-  border-left: 1px solid;
-}
-
-.interior-image-wrap::after {
-  right: 14px;
-  bottom: 14px;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+  box-shadow:
+    0 22px 54px rgba(0, 0, 0, 0.34),
+    0 0 30px var(--image-glow);
 }
 
 .interior-image-wrap img {
-  filter: saturate(0.24) contrast(1.14) brightness(0.72);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: var(--image-treatment);
+  transition:
+    filter 0.6s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.interior-image-composition:hover .interior-image-wrap img {
+  transform: scale(1.025);
 }
 
 .route-story .interior-image-wrap img,
@@ -670,56 +761,15 @@ body {
 }
 
 .image-index {
-  right: 18px;
-  left: 18px;
-  bottom: 16px;
-  display: flex;
-  justify-content: space-between;
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  padding: 10px 0 0;
   color: var(--bone);
   background: transparent;
-  font-size: 8px;
-}
-
-.image-signal-line {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  right: 0;
-  left: 0;
-  height: 1px;
-  background: rgba(184, 255, 99, 0.72);
-  box-shadow: 0 0 18px rgba(184, 255, 99, 0.44);
-}
-
-.route-optic {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  width: min(36vw, 420px);
-  aspect-ratio: 1;
-  border: 1px solid rgba(222, 219, 200, 0.44);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.route-optic i {
-  position: absolute;
-  inset: 12%;
-  border: 1px solid rgba(222, 219, 200, 0.24);
-  border-radius: 50%;
-}
-
-.route-optic i:nth-child(2) {
-  inset: 31%;
-  border-color: var(--signal);
-}
-
-.route-optic i:nth-child(3) {
-  inset: 48%;
-  background: var(--signal);
-  border: 0;
-  box-shadow: 0 0 25px rgba(184, 255, 99, 0.58);
+  font: inherit;
 }
 
 .content-ledger {
@@ -821,7 +871,7 @@ body {
   border-bottom: 1px solid var(--hairline);
 }
 
-.contact-hero > div:not(.route-coordinate):not(.contact-orbit) {
+.contact-hero > div:not(.route-index):not(.contact-orbit) {
   position: relative;
   z-index: 2;
 }
@@ -933,13 +983,16 @@ body {
     opacity: 0.42;
   }
 
-  .hero-microscope-visual {
-    inset: 70px -28% 0 8%;
+  .hero-microscope-sketch {
+    top: 88px;
+    bottom: 26%;
+    left: -8%;
+    width: min(52vw, 520px);
   }
 
-  .hero-microscope-visual img {
-    object-position: 70% 44%;
-    opacity: 0.15;
+  .hero-microscope-sketch img {
+    object-position: left center;
+    opacity: 0.34;
   }
 
   .hero-content {
@@ -951,8 +1004,7 @@ body {
   }
 
   .hero-content-inner {
-    grid-template-columns: minmax(0, 1fr) minmax(230px, 31vw);
-    gap: 34px;
+    display: block;
   }
 
   .hero-content h1 {
@@ -960,7 +1012,15 @@ body {
   }
 
   .statement-stage {
-    grid-template-columns: 48px 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .statement-stage > div:last-child {
+    margin-left: 58px;
+  }
+
+  .color-field h2 {
+    grid-column: 1;
   }
 
   .interior-hero {
@@ -972,12 +1032,8 @@ body {
     max-width: 760px;
   }
 
-  .interior-image-wrap {
+  .interior-image-composition {
     height: 62vh;
-  }
-
-  .route-optic {
-    width: min(60vw, 420px);
   }
 
   .content-ledger article {
@@ -994,6 +1050,26 @@ body {
   }
 }
 
+@media (max-width: 760px) {
+  .hero-content-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(76px, 16vw, 112px);
+  }
+
+  .hero-aside {
+    position: static;
+    z-index: auto;
+    width: fit-content;
+    max-width: min(100%, 430px);
+    justify-self: end;
+  }
+}
+
 @media (max-width: 600px) {
   .hero-shell {
     min-height: 100svh;
@@ -1005,13 +1081,16 @@ body {
     padding: 0 18px 28px;
   }
 
-  .hero-microscope-visual {
-    inset: 70px -48% 0 -18%;
+  .hero-microscope-sketch {
+    top: 82px;
+    bottom: 42%;
+    left: -18%;
+    width: min(72vw, 430px);
   }
 
-  .hero-microscope-visual img {
-    object-position: 72% 38%;
-    opacity: 0.08;
+  .hero-microscope-sketch img {
+    object-position: left center;
+    opacity: 0.23;
   }
 
   .hero-content-inner {
@@ -1026,20 +1105,17 @@ body {
   }
 
   .hero-aside {
-    width: 100%;
+    width: fit-content;
     min-width: 0;
-    max-width: none;
-    padding: 0;
+    max-width: 100%;
+    padding: 15px 18px 17px;
+    border-radius: 36px 36px 36px 10px;
   }
 
   .hero-aside > p {
-    max-width: 330px;
-    margin-bottom: 18px;
-    font-size: 13px;
-  }
-
-  .hero-links a {
-    min-height: 44px;
+    max-width: 310px;
+    font-size: 16px;
+    line-height: 1.38;
   }
 
   .statement-scroll {
@@ -1049,6 +1125,20 @@ body {
   .statement-stage {
     padding-right: 18px;
     padding-left: 18px;
+  }
+
+  .statement-meta {
+    top: 80px;
+    right: 18px;
+    left: 18px;
+  }
+
+  .statement-progress {
+    width: 88px;
+  }
+
+  .statement-stage > div:last-child {
+    margin-left: 0;
   }
 
   .statement-stage h2 {
@@ -1079,6 +1169,11 @@ body {
   .color-field {
     padding-right: 18px;
     padding-left: 18px;
+  }
+
+  .color-field > .section-index {
+    top: 76px;
+    left: 18px;
   }
 
   .color-field h2 {
@@ -1129,9 +1224,8 @@ body {
     padding: 104px 18px 60px;
   }
 
-  .route-coordinate {
+  .route-index {
     top: 26px;
-    right: 18px;
     left: 18px;
   }
 
@@ -1141,8 +1235,16 @@ body {
     line-height: 0.96;
   }
 
-  .interior-image-wrap {
+  .interior-image-composition {
     height: 52vh;
+  }
+
+  .interior-image-backdrop {
+    inset: 7% -3% -2% 8%;
+  }
+
+  .interior-image-wrap {
+    inset: 0 5% 10% 0;
   }
 
   .route-optic {

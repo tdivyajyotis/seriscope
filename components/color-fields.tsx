@@ -69,27 +69,30 @@ export function ColorFields() {
           className={`color-field ${fields[0].className}`}
           style={{ scale: firstScale }}
         >
-          <span>
-            {fields[0].index} / {fields[0].label}
-          </span>
+          <div className="section-index">
+            <span className="section-index-number">{fields[0].index}</span>
+            <span className="section-index-label">{fields[0].label}</span>
+          </div>
           <h2>{fields[0].title}</h2>
         </motion.article>
         <motion.article
           className={`color-field ${fields[1].className}`}
           style={{ y: secondY, scale: secondScale }}
         >
-          <span>
-            {fields[1].index} / {fields[1].label}
-          </span>
+          <div className="section-index">
+            <span className="section-index-number">{fields[1].index}</span>
+            <span className="section-index-label">{fields[1].label}</span>
+          </div>
           <h2>{fields[1].title}</h2>
         </motion.article>
         <motion.article
           className={`color-field ${fields[2].className}`}
           style={{ y: thirdY }}
         >
-          <span>
-            {fields[2].index} / {fields[2].label}
-          </span>
+          <div className="section-index">
+            <span className="section-index-number">{fields[2].index}</span>
+            <span className="section-index-label">{fields[2].label}</span>
+          </div>
           <h2>{fields[2].title}</h2>
         </motion.article>
         <div className="field-rail" aria-hidden="true">

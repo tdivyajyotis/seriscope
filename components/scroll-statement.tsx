@@ -52,15 +52,31 @@ export function ScrollStatement() {
     offset: ['start start', 'end end'],
   });
   const progressScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const indexOpacity = useTransform(
+    scrollYProgress,
+    [0.8, 0.92],
+    reduceMotion ? [1, 1] : [0, 1],
+  );
+  const indexY = useTransform(
+    scrollYProgress,
+    [0.8, 0.92],
+    reduceMotion ? [0, 0] : [10, 0],
+  );
   const words = statement.split(' ');
 
   return (
     <section className="statement-scroll" ref={section} id="overview">
       <div className="statement-stage">
         <div className="statement-meta">
-          <span>01 / Principle</span>
+          <motion.div
+            className="section-index"
+            style={{ opacity: indexOpacity, y: indexY }}
+          >
+            <span className="section-index-number">01</span>
+            <span className="section-index-label">Principle</span>
+          </motion.div>
           <div className="statement-progress">
-            <motion.i style={{ scaleY: progressScale }} />
+            <motion.i style={{ scaleX: progressScale }} />
           </div>
         </div>
         <div>

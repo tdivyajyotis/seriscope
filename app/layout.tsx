@@ -1,5 +1,10 @@
 import type { Metadata } from 'next';
-import { Almarai, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
+import {
+  Almarai,
+  Google_Sans,
+  Instrument_Serif,
+  JetBrains_Mono,
+} from 'next/font/google';
 import './globals.css';
 import './identity.css';
 
@@ -16,6 +21,12 @@ const instrumentSerif = Instrument_Serif({
 const jetBrainsMono = JetBrains_Mono({
   variable: '--font-mono',
   subsets: ['latin'],
+});
+const googleSans = Google_Sans({
+  variable: '--font-hero',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
@@ -49,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${almarai.variable} ${instrumentSerif.variable} ${jetBrainsMono.variable}`}
+        className={`${almarai.variable} ${instrumentSerif.variable} ${jetBrainsMono.variable} ${googleSans.variable}`}
       >
         {children}
       </body>

@@ -20,6 +20,19 @@ import { SiteHeader } from './site-header';
 import { researchPaper } from '@/lib/content';
 
 const HeroScene = dynamic(() => import('./hero-scene'), { ssr: false });
+const heroStatement = [
+  { word: 'Explainable,', emphasis: true },
+  { word: 'offline' },
+  { word: 'microscopy' },
+  { word: 'for' },
+  { word: 'Pebrine', emphasis: true },
+  { word: 'screening' },
+  { word: 'and' },
+  { word: 'Tasar', emphasis: true },
+  { word: 'egg' },
+  { word: 'fertility' },
+  { word: 'assessment.' },
+];
 const workflow = [
   {
     icon: Microscope,
@@ -100,15 +113,30 @@ export function HomeExperience() {
           />
         </motion.div>
         <div className="hero-shade" />
-        <div className="hero-microscope-visual" aria-hidden="true">
+        <motion.div
+          className="hero-microscope-sketch"
+          aria-hidden="true"
+          initial={
+            reduceMotion
+              ? false
+              : { opacity: 0, x: -110, scale: 0.92, rotate: -3 }
+          }
+          animate={{ opacity: 1, x: 0, scale: 1, rotate: 0 }}
+          style={{ y: heroMediaY }}
+          transition={{
+            duration: 1.15,
+            delay: 0.18,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
           <Image
-            src="/images/hero/microscope-outline.png"
+            src="/images/hero/microscope-comic.png"
             alt=""
             fill
             priority
-            sizes="(max-width: 900px) 100vw, 74vw"
+            sizes="(max-width: 760px) 72vw, 42vw"
           />
-        </div>
+        </motion.div>
         <motion.div className="hero-scene-motion" style={{ y: heroMediaY }}>
           <HeroScene />
         </motion.div>
@@ -148,26 +176,28 @@ export function HomeExperience() {
               </h1>
             </div>
 
-            <aside className="hero-aside" aria-label="Explore SeriScope">
-              <p>
-                Explainable, offline microscopy for Pebrine screening and Tasar
-                egg fertility assessment.
+            <motion.aside
+              className="hero-aside"
+              initial={reduceMotion ? false : { opacity: 0, x: 160 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 1.05,
+                delay: 0.48,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              <p aria-label="Explainable, offline microscopy for Pebrine screening and Tasar egg fertility assessment.">
+                {heroStatement.map(({ word, emphasis }) => (
+                  <span
+                    aria-hidden="true"
+                    className={emphasis ? 'hero-phrase-emphasis' : undefined}
+                    key={word}
+                  >
+                    {word}
+                  </span>
+                ))}
               </p>
-              <nav className="hero-links" aria-label="Featured sections">
-                <RouteLink href="/technology">
-                  <span>Technology</span>
-                  <ArrowUpRight size={16} aria-hidden="true" />
-                </RouteLink>
-                <RouteLink href="/research">
-                  <span>Research</span>
-                  <ArrowUpRight size={16} aria-hidden="true" />
-                </RouteLink>
-                <RouteLink href="/impact">
-                  <span>Impact</span>
-                  <ArrowUpRight size={16} aria-hidden="true" />
-                </RouteLink>
-              </nav>
-            </aside>
+            </motion.aside>
           </motion.div>
         </motion.div>
       </section>
