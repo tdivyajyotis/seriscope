@@ -1,19 +1,30 @@
-# Website for SeriScope
+# SeriScope
 
-Served by Github Pages and built with Jekyll & [minimal-light](https://github.com/yaoyao-liu/minimal-light)
+The public website for SeriScope, an edge-AI platform for Pebrine screening and
+fertility assessment in Tasar silkworm eggs.
 
-## Integration and conflict notes
+## Development
 
-- Base-branch conflict risk is currently low: `dev` already contains `origin/main` (merge base `ca8f440`), so there are no pending merge conflicts with base at this moment.
-- This branch now contains two site stacks:
-  - Legacy Jekyll templates/styles (`_layouts/`, `assets/css/`, `assets/js/`, `index.md`)
-  - New Vinext app templates/styles (`app/`, `components/`, `app/globals.css`, `app/identity.css`)
-- To avoid template/style conflicts in deployment, run only one pipeline per target environment (Jekyll **or** Vinext), not both for the same published site.
+Requirements: Node.js 22.13 or newer and pnpm.
 
-## Build and lint alert notes
+```sh
+pnpm install
+pnpm dev
+```
 
-- `pnpm run build` currently succeeds.
-- `pnpm run lint` currently reports existing issues in legacy JS (`assets/js/*`, `html_source_file/assets/js/*`) and generated UI component files (`components/ui/*`).
-- If CI is configured to fail on lint, treat these as known blockers until lint scope/rules are aligned with the intended deployment stack.
+## Quality checks
 
-<a href="https://seriscope.com">SeriScope</a> © 2025 by <a href="https://tdivyajyotis.in">Suryakanta Lenka &amp; Tripathy Divyajyoti Senapati</a> is licensed under the <a href="https://seriscope.com/assets/EUPL-1.2%20EN.txt">European Union Public Licence v. 1.2</a>
+```sh
+pnpm lint
+pnpm build
+```
+
+The production build is a fully static export. Generated HTML and assets are
+written to `dist/client`, which can be served by a static host with clean-URL
+support. The existing Sites configuration can also package and deploy the same
+output.
+
+## License
+
+SeriScope © 2025 Suryakanta Lenka and Tripathy Divyajyoti Senapati. Licensed
+under the [European Union Public Licence v1.2](LICENSE).

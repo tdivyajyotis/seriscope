@@ -5,6 +5,8 @@ import { motion, useReducedMotion } from 'motion/react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 
+export const dynamic = 'force-static';
+
 const topics = [
   'Research collaboration',
   'Field validation',

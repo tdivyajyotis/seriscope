@@ -8,6 +8,8 @@ import {
 import './globals.css';
 import './identity.css';
 
+export const dynamic = 'force-static';
+
 const almarai = Almarai({
   variable: '--font-body',
   subsets: ['latin'],
@@ -30,6 +32,7 @@ const googleSans = Google_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://seriscope.com'),
   title: 'SeriScope | Edge AI for sericulture',
   description:
     'SeriScope is an edge AI platform for Pebrine screening and fertility assessment in Tasar silkworm eggs.',

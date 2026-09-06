@@ -37,12 +37,3 @@ next-env.d.ts
 /outputs/
 /work/
 *.tsbuildinfo
-=======
-_site
-.sass-cache
-Gemfile.lock
-*.gem
-.DS_Store
-.jekyll-cache
-git-update.sh
-

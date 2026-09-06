@@ -56,15 +56,46 @@ export const achievements: Achievement[] = [
 ];
 
 export const pressOutlets: PressOutlet[] = [
-  { name: 'The Prameya', logo: null, homepage: 'https://www.prameya.com/', verified: true, fallbackText: 'PRAMEYA' },
-  { name: 'Samaya', logo: null, homepage: 'https://www.samayaepaper.com/about-us', verified: true, fallbackText: 'SAMAYA' },
-  { name: 'The Sakala', logo: null, homepage: 'https://www.thesakala.in/about-us', verified: true, fallbackText: 'THE SAKALA' },
-  { name: 'Pragativadi', logo: null, homepage: 'https://epaper.pragativadi.com/', verified: true, fallbackText: 'PRAGATIVADI' },
-  { name: 'Focus Feature', logo: null, homepage: null, verified: false, fallbackText: 'FOCUS FEATURE' },
+  {
+    name: 'The Prameya',
+    logo: null,
+    homepage: 'https://www.prameya.com/',
+    verified: true,
+    fallbackText: 'PRAMEYA',
+  },
+  {
+    name: 'Samaya',
+    logo: null,
+    homepage: 'https://www.samayaepaper.com/about-us',
+    verified: true,
+    fallbackText: 'SAMAYA',
+  },
+  {
+    name: 'The Sakala',
+    logo: null,
+    homepage: 'https://www.thesakala.in/about-us',
+    verified: true,
+    fallbackText: 'THE SAKALA',
+  },
+  {
+    name: 'Pragativadi',
+    logo: null,
+    homepage: 'https://epaper.pragativadi.com/',
+    verified: true,
+    fallbackText: 'PRAGATIVADI',
+  },
+  {
+    name: 'Focus Feature',
+    logo: null,
+    homepage: null,
+    verified: false,
+    fallbackText: 'FOCUS FEATURE',
+  },
 ];
 
 export const researchPaper = {
-  title: 'SeriScope: A Low-Cost Edge-AI System for Fertility and Disease Assessment of Tassar Silkworm Eggs',
+  title:
+    'SeriScope: A Low-Cost Edge-AI System for Fertility and Disease Assessment of Tassar Silkworm Eggs',
   description:
     'Trace SeriScope from field sampling and microscopy to model evaluation, explainability, and edge deployment.',
   openUrl: '/research/seriscope-project-report.pdf',
@@ -83,53 +114,117 @@ export const pageContent = {
   technology: {
     eyebrow: 'Technology',
     title: 'A compact diagnostic chain, designed for the field.',
-    intro: 'SeriScope combines microscopy, image processing, deep learning, explainability, and embedded computing in one operator-focused workflow.',
+    intro:
+      'SeriScope combines microscopy, image processing, deep learning, explainability, and embedded computing in one operator-focused workflow.',
     image: '/images/research/interface.png',
     imageAlt: 'SeriScope diagnostic interface showing model results',
     sections: [
-      ['01', 'Prepare', 'A sample is prepared for optical capture using a repeatable microscopy workflow.'],
-      ['02', 'Acquire', 'The device captures microscopic image data under practical field constraints.'],
-      ['03', 'Interpret', 'Computer vision and classification models screen for Pebrine and assess egg fertility.'],
-      ['04', 'Decide', 'Explainable outputs support a trained operator while inference remains fully offline.'],
+      [
+        '01',
+        'Prepare',
+        'A sample is prepared for optical capture using a repeatable microscopy workflow.',
+      ],
+      [
+        '02',
+        'Acquire',
+        'The device captures microscopic image data under practical field constraints.',
+      ],
+      [
+        '03',
+        'Interpret',
+        'Computer vision and classification models screen for Pebrine and assess egg fertility.',
+      ],
+      [
+        '04',
+        'Decide',
+        'Explainable outputs support a trained operator while inference remains fully offline.',
+      ],
     ],
   },
   research: {
     eyebrow: 'Research',
     title: 'Built on real samples, not a laboratory shortcut.',
-    intro: 'More than 1,400 field examples inform a multi-model evaluation spanning disease screening, fertility assessment, visual explanation, and embedded deployment.',
+    intro:
+      'More than 1,400 field examples inform a multi-model evaluation spanning disease screening, fertility assessment, visual explanation, and embedded deployment.',
     image: '/images/research/gradcam.png',
     imageAlt: 'Grad-CAM explainability output from the SeriScope research',
     sections: [
-      ['01', 'Field-grounded data', 'Samples were collected in Tasar sericulture contexts and documented through a practical microscopy pipeline.'],
-      ['02', 'Model comparison', 'Five classification models were evaluated to understand performance and deployment trade-offs.'],
-      ['03', 'Responsible interpretation', 'Visual explanations and human oversight keep the diagnostic result legible to an operator.'],
-      ['04', 'Next validation', 'Larger datasets, external validation, hardware integration, and field trials define the next research phase.'],
+      [
+        '01',
+        'Field-grounded data',
+        'Samples were collected in Tasar sericulture contexts and documented through a practical microscopy pipeline.',
+      ],
+      [
+        '02',
+        'Model comparison',
+        'Five classification models were evaluated to understand performance and deployment trade-offs.',
+      ],
+      [
+        '03',
+        'Responsible interpretation',
+        'Visual explanations and human oversight keep the diagnostic result legible to an operator.',
+      ],
+      [
+        '04',
+        'Next validation',
+        'Larger datasets, external validation, hardware integration, and field trials define the next research phase.',
+      ],
     ],
   },
   impact: {
     eyebrow: 'Impact',
     title: 'Earlier insight, closer to the people who need it.',
-    intro: 'The system is shaped around grainages and sericulture centres where connectivity, specialist access, time, and equipment can all be limited.',
+    intro:
+      'The system is shaped around grainages and sericulture centres where connectivity, specialist access, time, and equipment can all be limited.',
     image: '/images/research/fieldwork.png',
     imageAlt: 'SeriScope field visit to a Tasar silk farm',
     sections: [
-      ['01', 'Technicians', 'A repeatable visual workflow can support faster screening and more consistent documentation.'],
-      ['02', 'Farmers', 'Earlier, local decisions can reduce avoidable loss and strengthen rural livelihoods.'],
-      ['03', 'Researchers', 'Structured field imagery and model evaluation create a base for deeper validation.'],
-      ['04', 'Institutions', 'Low-cost offline hardware makes responsible adoption more practical beyond major laboratories.'],
+      [
+        '01',
+        'Technicians',
+        'A repeatable visual workflow can support faster screening and more consistent documentation.',
+      ],
+      [
+        '02',
+        'Farmers',
+        'Earlier, local decisions can reduce avoidable loss and strengthen rural livelihoods.',
+      ],
+      [
+        '03',
+        'Researchers',
+        'Structured field imagery and model evaluation create a base for deeper validation.',
+      ],
+      [
+        '04',
+        'Institutions',
+        'Low-cost offline hardware makes responsible adoption more practical beyond major laboratories.',
+      ],
     ],
   },
   story: {
     eyebrow: 'Story',
     title: 'From an Atal Tinkering Lab to a global science stage.',
-    intro: 'SeriScope grew through field visits, microscopy experiments, model evaluation, hardware trials, and a steady insistence that the final system work outside a presentation hall.',
+    intro:
+      'SeriScope grew through field visits, microscopy experiments, model evaluation, hardware trials, and a steady insistence that the final system work outside a presentation hall.',
     image: '/images/achievements/achievement-02.jpg',
     imageAlt: 'SeriScope team representing India at the Regeneron ISEF stage',
     sections: [
-      ['Team', 'Suryakanta Lenka and Tripathy Divyajyoti Senapati', 'Student researchers at DAV Public School, Unit VIII, Bhubaneswar.'],
+      [
+        'Team',
+        'Suryakanta Lenka and Tripathy Divyajyoti Senapati',
+        'Student researchers at DAV Public School, Unit VIII, Bhubaneswar.',
+      ],
       ['Mentor', 'Tanmay Kumar Nayak', 'ATL Coordinator and project mentor.'],
-      ['Recognition', 'IRIS to Regeneron ISEF', 'A national journey that reached the world’s largest pre-college science and engineering fair.'],
-      ['Home', 'Bhubaneswar, Odisha', 'Nurtured at the Atal Tinkering Lab, DAV Public School Unit VIII.'],
+      [
+        'Recognition',
+        'IRIS to Regeneron ISEF',
+        'A national journey that reached the world’s largest pre-college science and engineering fair.',
+      ],
+      [
+        'Home',
+        'Bhubaneswar, Odisha',
+        'Nurtured at the Atal Tinkering Lab, DAV Public School Unit VIII.',
+      ],
     ],
   },
 } as const;
