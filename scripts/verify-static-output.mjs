@@ -1,27 +1,35 @@
 import { access, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-const outputDirectory = join(process.cwd(), 'dist', 'client');
-const routes = [
-  'index',
-  'contact',
-  'impact',
-  'research',
-  'story',
-  'technology',
-  '404',
+const root = process.cwd();
+const requiredFiles = [
+  'index.html',
+  'styles.css',
+  'script.js',
+  'public/images/research/microscopy.png',
+  'public/images/research/gradcam.png',
+  'public/images/research/fieldwork.png',
+  'public/images/research/workflow.jpg',
+  'public/research/seriscope-project-report.pdf',
 ];
 
-await Promise.all(
-  routes.map(async (route) => {
-    const outputPath = join(outputDirectory, `${route}.html`);
-    await access(outputPath);
+const html = await readFile(join(root, 'index.html'), 'utf8');
+const referencedLocalFiles = [
+  ...html.matchAll(/(?:src|href)="(public\/[^"]+)"/g),
+].map((match) => match[1]);
 
-    const html = await readFile(outputPath, 'utf8');
-    if (route !== '404' && !html.includes('<main')) {
-      throw new Error(`${route}.html does not contain rendered page content`);
-    }
-  }),
+await Promise.all(
+  [...new Set([...requiredFiles, ...referencedLocalFiles])].map((file) =>
+    access(join(root, file)),
+  ),
 );
 
-console.log(`Verified ${routes.length} statically rendered routes.`);
+for (const marker of ['<main', 'styles.css', 'script.js', 'public/images/']) {
+  if (!html.includes(marker)) {
+    throw new Error(`index.html is missing required marker: ${marker}`);
+  }
+}
+
+console.log(
+  `Verified ${new Set([...requiredFiles, ...referencedLocalFiles]).size} local files for the static site.`,
+);

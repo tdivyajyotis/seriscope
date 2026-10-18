@@ -1,28 +1,24 @@
 # SeriScope
 
-The public website for SeriScope, an edge-AI platform for Pebrine screening and
-fertility assessment in Tasar silkworm eggs.
+The public website for SeriScope, an edge-AI system for Pebrine screening and
+fertility assessment in Tassar silkworm eggs.
 
-## Development
+This is a framework-free static site, built in the same pattern as
+TurtleGuard: `index.html`, `styles.css`, and a small `script.js`. All images
+and the research report are local files in `public/`.
 
-Requirements: Node.js 22.13 or newer and pnpm.
+## Preview
+
+Open `index.html` directly, or serve this folder from any static web server.
+No package installation or build step is required.
+
+## Verify
+
+With Node.js available:
 
 ```sh
-pnpm install
-pnpm dev
+npm run verify
 ```
-
-## Quality checks
-
-```sh
-pnpm lint
-pnpm build
-```
-
-The production build is a fully static export. Generated HTML and assets are
-written to `dist/client`, which can be served by a static host with clean-URL
-support. The existing Sites configuration can also package and deploy the same
-output.
 
 ## License
 
