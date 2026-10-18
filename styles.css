@@ -429,15 +429,15 @@ h2 em { color: var(--green); font-style: italic; }
 .team-strip strong { font-family: var(--serif); font-size: 22px; font-weight: 400; line-height: 1.05; }
 .team-strip span { color: rgba(255, 253, 248, 0.59); font-size: 12px; line-height: 1.45; }
 
-.report-section { min-height: 720px; display: grid; grid-template-columns: 1fr 1fr; color: var(--ink); background: var(--paper); }
-.report-preview { position: relative; display: grid; place-items: center; overflow: hidden; padding: 76px; background: var(--foam); }
+.report-section { min-height: 440px; display: grid; grid-template-columns: 1fr 1fr; color: var(--ink); background: var(--paper); }
+.report-preview { position: relative; display: grid; place-items: center; overflow: hidden; padding: 40px 56px; background: var(--foam); }
 .report-preview::before { position: absolute; top: -14%; right: -9%; width: 52%; aspect-ratio: 1; border: 1px solid rgba(17, 61, 45, 0.2); border-radius: 50%; content: ''; }
-.report-preview img { position: relative; z-index: 1; width: auto; max-width: 100%; max-height: 540px; box-shadow: var(--shadow); }
+.report-preview img { position: relative; z-index: 1; width: auto; max-width: 100%; max-height: 340px; box-shadow: var(--shadow); }
 .report-preview > span { position: absolute; z-index: 2; bottom: 22px; left: 24px; font: 700 10px/1 ui-monospace, 'Cascadia Code', Consolas, monospace; letter-spacing: 0.06em; }
-.report-copy { display: flex; flex-direction: column; justify-content: center; padding: 78px clamp(36px, 7vw, 130px); }
-.report-copy h2 { margin: 20px 0 22px; font-size: clamp(54px, 5.6vw, 86px); line-height: 0.9; }
+.report-copy { display: flex; flex-direction: column; justify-content: center; padding: 48px clamp(36px, 7vw, 130px); }
+.report-copy h2 { margin: 14px 0 16px; font-size: clamp(40px, 4.2vw, 62px); line-height: 0.92; }
 .report-copy > p:not(.eyebrow) { max-width: 535px; margin: 0; color: rgba(17, 61, 45, 0.74); font-size: 15px; line-height: 1.7; }
-.report-copy .report-title { margin-top: 23px; padding-top: 21px; border-top: 1px solid var(--line); font: 700 11px/1.55 ui-monospace, 'Cascadia Code', Consolas, monospace; }
+.report-copy .report-title { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font: 700 11px/1.55 ui-monospace, 'Cascadia Code', Consolas, monospace; }
 
 .featured-section { padding: 90px 0 98px; background: var(--paper); border-top: 1px solid var(--line); }
 .featured-section h2 { max-width: 650px; margin: 17px 0 0; font-family: var(--serif); font-size: clamp(39px, 4.3vw, 65px); font-weight: 400; letter-spacing: -0.045em; line-height: 0.92; }
@@ -524,7 +524,8 @@ a.press-image:hover img { filter: saturate(1) contrast(1); transform: scale(1.03
   .progression article, .progression article:first-child { min-height: 270px; border-right: 0; border-bottom: 1px solid var(--line); border-left: 0; }
   .progression h2 { max-width: 420px; font-size: clamp(44px, 11vw, 62px); }
   .research-section, .report-section { grid-template-columns: 1fr; }
-  .research-copy, .report-copy { min-height: 520px; padding: 76px 28px; }
+  .research-copy { min-height: 520px; padding: 76px 28px; }
+  .report-copy { min-height: 0; padding: 44px 28px; }
   .research-image { min-height: 480px; }
   .research-detail { padding: 90px 0; }
   .split-grid, .impact-grid { grid-template-columns: 1fr; gap: 56px; }
@@ -538,8 +539,8 @@ a.press-image:hover img { filter: saturate(1) contrast(1); transform: scale(1.03
   .achievement-card-four { grid-column: 1 / -1; max-width: 64%; justify-self: center; }
   .recognition-strip { grid-template-columns: 1fr 1fr; gap: 30px 24px; margin-top: 55px; }
   .team-strip { grid-template-columns: 1fr 1fr; gap: 30px 24px; margin-top: 70px; }
-  .report-preview { min-height: 510px; padding: 54px 28px; }
-  .report-preview img { max-height: 400px; }
+  .report-preview { min-height: 0; padding: 36px 28px; }
+  .report-preview img { max-height: 280px; }
   .press-gallery { grid-template-columns: 1fr 1fr; gap: 28px 18px; margin-top: 38px; }
   .contact-section { padding: 88px 0; }
   .contact-grid { grid-template-columns: 1fr; gap: 42px; }
